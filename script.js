@@ -32,7 +32,10 @@ let globalArrayOfWords = rawtext.split("\n").map(line => {
 });
 
 const searchTerm = "hestevogn";
+const searchStartTime = performance.now();
 const foundWord = binarySearch(globalArrayOfWords, searchTerm);
+const searchEndTime = performance.now();
+
 if (foundWord) {
     console.log(JSON.stringify(foundWord, null, 2));
 } else {
